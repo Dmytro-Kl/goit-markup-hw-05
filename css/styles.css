@@ -137,7 +137,7 @@ img {
   color: var(--main-txt-cl);
   padding-top: 32px;
   padding-bottom: 32px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-nav-link:hover,
@@ -367,7 +367,7 @@ img {
   background-color: var(--white-text-color);
   border-radius: 50%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-socials-linc:hover,
@@ -393,7 +393,7 @@ img {
   border-radius: 4px;
   fill: var(--socials-icons);
   color: var(--socials-icons);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-linc:hover,
@@ -420,7 +420,6 @@ img {
   color: var(--titel-txt-cl);
   background-color: var(--background-lite-color);
   cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
   padding: 6px 22px;
@@ -433,6 +432,7 @@ img {
 .portfolio-btn:focus {
   background-color: var(--accent-color);
   color: var(--white-text-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .container-portfolio-text {
@@ -442,7 +442,8 @@ img {
   border-bottom: 1px solid #eeeeee;
 }
 
-.portfolio-item:hover {
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -453,8 +454,10 @@ img {
   gap: 30px;
 }
 
-.portfolio-item {
+.portfolio-link {
+  text-decoration: none;
   background: var(--white-text-color);
+  display: block;
 }
 
 .overlay-item {
@@ -481,7 +484,8 @@ img {
   backdrop-filter: blur(4px);
 }
 
-.portfolio-item:hover .overlay {
+.portfolio-link:hover .overlay,
+.portfolio-link:focus .overlay {
   transform: translateY(0);
 }
 
@@ -613,6 +617,10 @@ address {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
